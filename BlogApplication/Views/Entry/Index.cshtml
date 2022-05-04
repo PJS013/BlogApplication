@@ -1,8 +1,10 @@
 ﻿@model IEnumerable<Entry>
-
 @{
     ViewData["Title"] = "Index";
 }
+<partial name="_Notification"/>
+
+
 <div class="container p-3">
     <h3>@TempData["blogBlogId"]</h3>
     <h3>@TempData["blogTitle"]</h3>
@@ -67,8 +69,8 @@
                 <td width="20%">
                     @obj.EntryTitle
                 </td>
-                <td width="30%">
-                    <pre>
+                <td width="30%" >
+                    <pre style="white-space:pre-line">
                         @obj.Content
                     </pre>
                 </td>

@@ -1,14 +1,5 @@
 ﻿@model User
-@{
-    if (TempData.ContainsKey("registerError"))
-    {
-        <div>
-            <h1>
-                @TempData["registerError"]
-            </h1>
-        </div>
-    }
-}
+<partial name="_Notification"/>
 
 <form method="post">
     <div class="border p-3 mt-4">

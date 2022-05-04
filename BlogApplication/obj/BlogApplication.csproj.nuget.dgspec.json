@@ -1,30 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Piotr\\RiderProjects\\BlogApplication\\BlogApplication\\BlogApplication.csproj": {}
+    "/home/piotr/BlogApp/BlogApplication/BlogApplication/BlogApplication.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Piotr\\RiderProjects\\BlogApplication\\BlogApplication\\BlogApplication.csproj": {
+    "/home/piotr/BlogApp/BlogApplication/BlogApplication/BlogApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Piotr\\RiderProjects\\BlogApplication\\BlogApplication\\BlogApplication.csproj",
+        "projectUniqueName": "/home/piotr/BlogApp/BlogApplication/BlogApplication/BlogApplication.csproj",
         "projectName": "BlogApplication",
-        "projectPath": "C:\\Users\\Piotr\\RiderProjects\\BlogApplication\\BlogApplication\\BlogApplication.csproj",
-        "packagesPath": "C:\\Users\\Piotr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Piotr\\RiderProjects\\BlogApplication\\BlogApplication\\obj\\",
+        "projectPath": "/home/piotr/BlogApp/BlogApplication/BlogApplication/BlogApplication.csproj",
+        "packagesPath": "/home/piotr/.nuget/packages/",
+        "outputPath": "/home/piotr/BlogApp/BlogApplication/BlogApplication/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Piotr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/piotr/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -76,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.202/RuntimeIdentifierGraph.json"
         }
       }
     }

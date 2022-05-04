@@ -80,7 +80,7 @@ public class BlogController : Controller
             }
             else
             {
-                TempData["creationError"] = "Cannot create blog with id same as other. Pick different value";
+                TempData["error"] = "Cannot create blog with id same as other. Pick different value";
             }
         }
 
@@ -115,7 +115,7 @@ public class BlogController : Controller
             TempData["success"] = "Category updated successfully";
             return RedirectToAction("Index");
         }
-
+        TempData["error"] = "Cannot edit category. Try again";
         return View(obj);
     }
     

@@ -39,7 +39,7 @@ public class UserController : Controller
                 }
             }
 
-            TempData["loginError"] = "Unable to login. Wrong login data provided";
+            TempData["error"] = "Unable to login. Wrong login data provided";
         }
 
         return View();
@@ -62,7 +62,7 @@ public class UserController : Controller
                 if (obj.userId.Equals(user.userId) &&
                     obj.email.Equals(user.email))
                 {
-                    TempData["registerError"] =
+                    TempData["error"] =
                         "User with these credentials already exists. Pick different credentials";
                     state = true;
                     //break;

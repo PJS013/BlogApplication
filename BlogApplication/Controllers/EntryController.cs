@@ -51,7 +51,7 @@ public class EntryController : Controller
             TempData["success"] = "Entry created successfully";
             return RedirectToAction("Index");
         }
-
+        TempData["error"] = "Couldn't create entry. Try again";
         return View(obj);
     }
     
@@ -83,7 +83,7 @@ public class EntryController : Controller
             TempData["success"] = "Entry updated successfully";
             return RedirectToAction("Index");
         }
-
+        TempData["error"] = "Cannot edit entry. Try again";
         return View(obj);
     }
     

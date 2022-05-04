@@ -1,14 +1,5 @@
 ﻿@model Blog
-@{
-    if (TempData.ContainsKey("creationError"))
-    {
-        <div>
-            <h1>
-                @TempData["creationError"]
-            </h1>
-        </div>
-    }
-}
+<partial name="_Notification"/>
 
 
 <form method="post">
