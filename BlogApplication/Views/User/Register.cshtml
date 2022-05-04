@@ -1,4 +1,4 @@
-﻿@model User
+﻿@model RegisterViewModel
 <partial name="_Notification"/>
 
 <form method="post">
@@ -12,19 +12,24 @@
         }
         <div asp-validation-summary="All"></div>
         <div class="mb-3">
-            <label asp-for="userId"></label>
-            <input placeholder="userId" asp-for="userId" class="form-control"/>
-            <span asp-validation-for="userId" class="text-danger"></span>
+            <label asp-for="UserId"></label>
+            <input placeholder="userId" asp-for="UserId" class="form-control"/>
+            <span asp-validation-for="UserId" class="text-danger"></span>
         </div>
         <div class="mb-3">
-            <label asp-for="email"></label>
-            <input placeholder="email" asp-for="email" class="form-control"/>
-            <span asp-validation-for="email" class="text-danger"></span>
+            <label asp-for="Email"></label>
+            <input placeholder="email" asp-for="Email" class="form-control"/>
+            <span asp-validation-for="Email" class="text-danger"></span>
         </div>
         <div class="mb-3">
-            <label asp-for="password"></label>
-            <input placeholder="password" type ="password" asp-for="password" class="form-control"/>
-            <span asp-validation-for="password" class="text-danger"></span>
+            <label asp-for="Password"></label>
+            <input placeholder="password" type ="password" asp-for="Password" class="form-control"/>
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="ConfirmPassword"></label>
+            <input placeholder="Confirm password" type ="password" asp-for="ConfirmPassword" class="form-control"/>
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
         </div>
         <button type="submit" class="btn btn-primary" style="width: 150px">Register</button>
         <a asp-controller="Home" asp-action="Index" class="btn btn-secondary" style="width: 150px">

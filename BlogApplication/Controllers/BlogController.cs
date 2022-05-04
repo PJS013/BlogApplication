@@ -112,10 +112,10 @@ public class BlogController : Controller
         {
             _db.Blogs.Update(obj);
             _db.SaveChanges();
-            TempData["success"] = "Category updated successfully";
+            TempData["success"] = "Blog updated successfully";
             return RedirectToAction("Index");
         }
-        TempData["error"] = "Cannot edit category. Try again";
+        TempData["error"] = "Cannot edit blog. Try again";
         return View(obj);
     }
     
@@ -148,7 +148,7 @@ public class BlogController : Controller
 
         _db.Blogs.Remove(obj);
         _db.SaveChanges();
-        TempData["success"] = "Category deleted successfully";
+        TempData["success"] = "Blog deleted successfully";
         return RedirectToAction("Index");
     }
 }

@@ -6,10 +6,32 @@
 
 
 <div class="container p-3">
-    <h3>@TempData["blogBlogId"]</h3>
-    <h3>@TempData["blogTitle"]</h3>
-    <h3>@TempData["blogOwnerId"]</h3>
+    <div class="row">
+        <div class="col-md-3">
+            ID of the blog
+        </div>
+        <div class="col-md">
+            @TempData["blogBlogId"]
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            Title of the blog
+        </div>
+        <div class="col-md">
+            @TempData["blogTitle"]
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            ID of blog owner
+        </div>
+        <div class="col-md">
+            @TempData["blogOwnerId"]
+        </div>
+    </div>
 </div>
+
 @{
     TempData.Keep("blogBlogId");
     TempData.Keep("blogTitle");

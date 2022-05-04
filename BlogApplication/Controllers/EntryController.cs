@@ -18,10 +18,6 @@ public class EntryController : Controller
     public IActionResult Index()
     {
         IEnumerable<Entry> objEntryList = _db.Entries;
-        // EntryBlogData ebdata = new EntryBlogData();
-        // ebdata.blog = (Blog)TempData["blogObj"];
-        // TempData.Keep("BlogObj");
-        // ebdata.entry = objEntryList;
         return View(objEntryList);
     }
     

@@ -17,7 +17,6 @@ public class UserController : Controller
     // GET
     public IActionResult Login()
     {
-        //TempData.Remove("UserId");
         return View();
     }
     
@@ -51,31 +50,43 @@ public class UserController : Controller
     }
     
     [HttpPost]
-    public IActionResult Register(User obj)
+    public IActionResult Register(RegisterViewModel obj)
     {
         if (ModelState.IsValid)
         {
-            bool state = false;
-            IEnumerable<User> users = _db.Users;
-            foreach (var user in users)
+            if(obj.Password == obj.ConfirmPassword)
             {
-                if (obj.userId.Equals(user.userId) &&
-                    obj.email.Equals(user.email))
+                bool state = false;
+                IEnumerable<User> users = _db.Users;
+                foreach (var user in users)
                 {
-                    TempData["error"] =
-                        "User with these credentials already exists. Pick different credentials";
-                    state = true;
-                    //break;
+                    if (obj.UserId.Equals(user.userId) &&
+                        obj.Email.Equals(user.email))
+                    {
+                        TempData["error"] =
+                            "User with these credentials already exists. Pick different credentials";
+                        state = true;
+                    }
+                }
+
+                if (state == false)
+                {
+                    User user = new User() {
+                        userId = obj.UserId,
+                        email = obj.Email,
+                        password = obj.Password
+                    };
+                    _db.Users.Add(user);
+                    _db.SaveChanges();
+                    TempData["success"] = "Registered successfully";
+                    return RedirectToAction("Login");
                 }
             }
-
-            if (state == false)
+            else 
             {
-                _db.Users.Add(obj);
-                _db.SaveChanges();
-                TempData["success"] = "Logged in successfully";
-                return RedirectToAction("Login");
+                TempData["error"] = "These passwords do not match";
             }
+            
         }
         return View();
     }
