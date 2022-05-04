@@ -1,0 +1,43 @@
+﻿@model User
+@{
+    if (TempData.ContainsKey("registerError"))
+    {
+        <div>
+            <h1>
+                @TempData["registerError"]
+            </h1>
+        </div>
+    }
+}
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Register</h2>
+            <hr/>
+        </div>
+        @{
+            User user = new User();
+        }
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3">
+            <label asp-for="userId"></label>
+            <input placeholder="userId" asp-for="userId" class="form-control"/>
+            <span asp-validation-for="userId" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="email"></label>
+            <input placeholder="email" asp-for="email" class="form-control"/>
+            <span asp-validation-for="email" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="password"></label>
+            <input placeholder="password" type ="password" asp-for="password" class="form-control"/>
+            <span asp-validation-for="password" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 150px">Register</button>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-secondary" style="width: 150px">
+            Back to home
+        </a>
+    </div>
+</form>

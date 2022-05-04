@@ -1,0 +1,36 @@
+﻿@model Blog
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Edit Blog</h2>
+            <hr/>
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3">
+            <label asp-for="Title"></label>
+            <input placeholder="Title" asp-for="Title" class="form-control"/>
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="BlogId"></label>
+            <input placeholder="BlogId" asp-for="BlogId" class="form-control"/>
+            <span asp-validation-for="BlogId" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="OwnerId"></label>
+            <input asp-for="OwnerId" readonly="readonly" class="form-control"/>
+            <span asp-validation-for="OwnerId" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 150px">Update</button>
+        <a asp-controller="Blog" asp-action="Index" class="btn btn-secondary" style="width: 150px">
+            Back to list
+        </a>
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

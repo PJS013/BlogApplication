@@ -1,0 +1,36 @@
+﻿@model Entry
+
+<form method="post" asp-action="Delete">
+    <input asp-for="EntryId" hidden/>
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Delete Entry</h2>
+            <hr/>
+        </div>
+        <div class="mb-3">
+            <label asp-for="EntryTitle"></label>
+            <input asp-for="EntryTitle" disabled class="form-control"/>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Content"></label>
+            <input asp-for="Content" disabled class="form-control"/>
+        </div>
+        <div class="mb-3">
+            <label asp-for="CreatorId"></label>
+            <input asp-for="CreatorId" disabled class="form-control"/>
+        </div>
+        <div class="mb-3">
+            <label asp-for="DateOfPublication"></label>
+            <input asp-for="DateOfPublication" disabled class="form-control"/>
+        </div>
+        <div class="mb-3">
+            <label asp-for="BlogId"></label>
+            <input asp-for="BlogId" disabled class="form-control"/>
+        </div>
+        
+        <button type="submit" class="btn btn-danger" style="width: 150px">Delete</button>
+        <a asp-controller="Entry" asp-action="Index" class="btn btn-secondary" style="width: 150px">
+            Back to list
+        </a>
+    </div>
+</form>

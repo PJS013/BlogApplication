@@ -1,0 +1,41 @@
+﻿@model Entry
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Edit Entry</h2>
+            <hr/>
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3">
+            <label asp-for="EntryTitle"></label>
+            <input placeholder="Entry Title" asp-for="EntryTitle" class="form-control"/>
+            <span asp-validation-for="EntryTitle" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Content"></label>
+            <textarea placeholder="Content" asp-for="Content" class="form-control"></textarea>
+            <span asp-validation-for="Content" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="CreatorId"></label>
+            <input asp-for="CreatorId" readonly="readonly" class="form-control"/>
+            <span asp-validation-for="CreatorId" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="DateOfPublication"></label>
+            <input asp-for="DateOfPublication" readonly="readonly" class="form-control"/>
+            <span asp-validation-for="DateOfPublication" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="BlogId"></label>
+            <input asp-for="BlogId" readonly="readonly" class="form-control"/>
+            <span asp-validation-for="BlogId" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 150px">Update</button>
+        <a asp-controller="Entry" asp-action="Index" class="btn btn-secondary" style="width: 150px">
+            Back to list
+        </a>
+    </div>
+</form>

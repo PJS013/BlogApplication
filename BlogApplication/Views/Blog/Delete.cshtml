@@ -1,0 +1,33 @@
+﻿@model Blog
+
+<form method="post" asp-action="Delete">
+    <input asp-for="BlogId" hidden/>
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Delete Blog</h2>
+            <hr/>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Title"></label>
+            <input asp-for="Title" disabled class="form-control"/>
+        </div>
+        <div class="mb-3">
+            <label asp-for="BlogId"></label>
+            <input asp-for="BlogId" disabled class="form-control"/>
+        </div>
+        <div class="mb-3">
+            <label asp-for="OwnerId"></label>
+            <input asp-for="OwnerId" disabled class="form-control"/>
+        </div>
+        <button type="submit" class="btn btn-danger" style="width: 150px">Delete</button>
+        <a asp-controller="Blog" asp-action="Index" class="btn btn-secondary" style="width: 150px">
+            Back to list
+        </a>
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
